@@ -27,7 +27,7 @@ class AuthorizationScreen extends StatelessWidget {
       navigationDelegate: (delegate) {
         final Uri responseUri = Uri.parse(delegate.url);
         final String path = responseUri.path;
-        final bool ok = path.endsWith('/' + token + '/result');
+        final bool ok = path.endsWith('/' + token + '/exists');
         if (ok) {
           VoterService.getJwt(token).then((value) => print(value));
 

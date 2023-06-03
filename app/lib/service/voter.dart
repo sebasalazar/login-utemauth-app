@@ -11,7 +11,7 @@ class VoterService {
   static const String _jsonMime = "application/json";
 
   static Future<bool> login(BuildContext context) async {
-    Uri url = Uri.parse(_host + "/UtemAuth/v1/auth/login");
+    Uri url = Uri.parse(_host + "/UtemAuth/v1/tokens/login");
     Map<String, String> headers = {
       'accept': _jsonMime,
       'Content-Type': _jsonMime,
@@ -39,7 +39,7 @@ class VoterService {
   }
 
   static Future<String> getJwt(String token) async {
-    Uri url = Uri.parse(_host + '/UtemAuth/v1/' + token + '/jwt');
+    Uri url = Uri.parse(_host + '/UtemAuth/v1/tokens/' + token + '/jwt');
     Map<String, String> headers = {
       'accept': _jsonMime,
       'Content-Type': _jsonMime,
